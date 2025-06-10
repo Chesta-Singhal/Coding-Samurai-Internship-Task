@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Landing Page</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      background: #0066cc;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    nav a {
+      margin: 0 15px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      text-align: center;
+      background: #e0f7fa;
+    }
+
+    .hero h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      max-width: 600px;
+      margin-bottom: 20px;
+    }
+
+    .hero button {
+      padding: 12px 24px;
+      background: #0066cc;
+      border: none;
+      color: white;
+      font-size: 1em;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 40px 20px;
+    }
+
+    .feature {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .signup {
+      background: #ffffff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .signup form {
+      max-width: 400px;
+      margin: auto;
+    }
+
+    .signup input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .signup button {
+      background: #28a745;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      width: 100%;
+      font-size: 1em;
+      cursor: pointer;
+    }
+
+    footer {
+      text-align: center;
+      background: #333;
+      color: white;
+      padding: 20px 0;
+    }
+
+    .success-msg {
+      color: green;
+      margin-top: 10px;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 1.8em;
+      }
+
+      nav {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Fictional Product</h1>
+    <nav>
+      <a href="#features">Features</a>
+      <a href="#signup">Sign Up</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Welcome to Our Service</h1>
+    <p>Discover the easiest way to manage your tasks with our fictional product. It’s simple, fast, and efficient.</p>
+    <button onclick="scrollToSignup()">Get Started</button>
+  </section>
+
+  <section class="features" id="features">
+    <div class="feature">
+      <h3>Fast Performance</h3>
+      <p>Experience lightning-fast speed with our optimized platform.</p>
+    </div>
+    <div class="feature">
+      <h3>Mobile Friendly</h3>
+      <p>Designed with mobile-first principles for all devices.</p>
+    </div>
+    <div class="feature">
+      <h3>Easy to Use</h3>
+      <p>Intuitive UI with minimal learning curve.</p>
+    </div>
+  </section>
+
+  <section class="signup" id="signup">
+    <h2>Sign Up Now</h2>
+    <form id="signupForm">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <button type="submit">Submit</button>
+      <p id="formMsg" class="success-msg"></p>
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2025 Fictional Product. All rights reserved.
+  </footer>
+
+  <script>
+    function scrollToSignup() {
+      document.getElementById("signup").scrollIntoView({ behavior: "smooth" });
+    }
+
+    document.getElementById("signupForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      document.getElementById("formMsg").textContent = "Thanks for signing up!";
+      this.reset();
+    });
+  </script>
+
+</body>
+</html>
